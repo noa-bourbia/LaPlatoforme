@@ -1,0 +1,22 @@
+# Variables d'environnement
+
+## Supabase
+- SUPABASE_URL=
+- SUPABASE_ANON_KEY=
+- SUPABASE_SERVICE_ROLE_KEY= (backend only)
+
+## Stripe
+- STRIPE_PUBLIC_KEY=
+- STRIPE_SECRET_KEY=
+- STRIPE_WEBHOOK_SECRET=
+
+## Firebase (FCM)
+- FIREBASE_API_KEY=
+- FIREBASE_PROJECT_ID=
+- FIREBASE_MESSAGING_SENDER_ID=
+- FIREBASE_APP_ID=
+- FIREBASE_VAPID_KEY= (web push)
+
+## App
+- NEXT_PUBLIC_BASE_URL=
+- NEXT_PUBLIC_ENV=development|production

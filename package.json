@@ -1,0 +1,36 @@
+{
+  "name": "restaurant-connect",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Restaurant Connect - QR, Takeaway, Staff & KDS System",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm run --parallel --filter web-client --filter staff --filter kds --filter admin dev",
+    "dev:web": "pnpm --filter web-client dev",
+    "dev:staff": "pnpm --filter staff dev",
+    "dev:kds": "pnpm --filter kds dev",
+    "dev:admin": "pnpm --filter admin dev",
+    "build": "pnpm --filter @restaurant-connect/shared build && pnpm --filter @restaurant-connect/ui build && pnpm run --filter \"./apps/**\" build",
+    "build:packages": "pnpm --filter @restaurant-connect/shared build && pnpm --filter @restaurant-connect/ui build",
+    "lint": "pnpm run --parallel --filter \"./apps/**\" --filter \"./packages/**\" lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "test": "pnpm run --parallel --filter \"./apps/**\" test",
+    "test:e2e": "pnpm --filter web-client test:e2e",
+    "clean": "rm -rf node_modules && pnpm run --parallel --filter \"./apps/**\" --filter \"./packages/**\" clean"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.12.0"
+}
